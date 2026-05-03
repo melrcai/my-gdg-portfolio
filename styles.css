@@ -1,0 +1,211 @@
+
+/* GDG / Google Color Variables */
+/*
+  On this part, we define color variables based on Google's branding colors.
+
+  These color variables can then be reused throughout the entire CSS file without having to type the color code everytime we want to use them. 
+
+  Another benefit of using variables is that if we want to change a color, we only need to change it in one place (here) and it will be reflected everywhere the variable is used.
+*/
+:root {
+  --google-dark-pink: #cc3e87;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc04;
+  --google-green: #34a853;
+
+  /* Dark Mode Variables */
+  --bg-body: #202124;
+  --bg-card: #303134;
+  --bg-card-hover: #3c4043;
+  --text-main: #e8eaed;
+  --text-muted: #9aa0a6;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --border-color: #5f6368;
+}
+
+/* Reset and Base Styles */
+/*
+  Here we reset some default browser styles and set base styles for the body and headings.
+
+  Basically, we want every single element on our page to start with no margin or padding, and we want to use the border-box model for box sizing.
+*/
+* {
+  /*border: 1px red solid; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  On this part, we set the base styles for the body and headings.
+
+  We set the font family to "Roboto", which is a popular Google font, and we set the line height for better readability.
+
+  We also set the text color and background color using the variables we defined earlier.
+
+  Finally, we set the overflow-x property to "hidden", which is used to hide the horizontal scroll bar. 
+*/
+body {
+  font-family: "Pixelify Sans", pixelify -serif;
+  line-height: 1.6;
+  color: var(--text-main);
+  background-color: var(--bg-body);
+}
+
+/* 
+  TODO: Live Coding Session Styles
+  
+  We will add styles for:
+  - Header
+  - Container
+  - Sections (About, Skills, Projects, Contact)
+  - Footer
+*/
+
+
+/* Header Section */
+header {
+  padding: 80px 20px;
+  text-align: center;
+  position: relative; /*positioning sa parent?*/
+  border-bottom: 5px solid var(--google-dark-pink);
+}
+
+header h1 {
+  font-size: 3.5em;
+}
+
+header p {
+ font-size: 1.3em; 
+ margin-bottom: 30px;
+ color: gray;
+}
+
+.corner-img {
+  position: absolute;
+  height: auto;
+  width: 12vw;
+  max-width: 20vw;
+}
+
+.corner-img.left {
+  width: 6vw;
+  top: 125px;
+  left: 120px;
+}
+
+.corner-img.right {
+  top: 50px;
+  right: 100px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-links a {
+  padding: 10px 24px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background-color: #ff4aae13;
+  color: #cc3e87;
+  border-color: #f4428f;
+
+}
+/* Main Content & Section Styling */
+
+.container {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+section {
+  background-color: var(--bg-card);
+  margin: 30px 0;
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid transparent; 
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.500);
+  transition: border-color 0.3s ease;
+}
+
+section h2 {
+  font-size: 2.2em;
+  margin-bottom: 50px;
+  position: relative;
+
+}
+
+section h2::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -5px;
+  height: 4px;
+  width: 60px;
+  background-color: var(--google-dark-pink);
+}
+section:hover {
+  border-color: var(--bg-card-hover);
+}
+/* About Section */
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-img {
+  background-color: white;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #cc3e87;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.about-img img {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+  transition: trasform 0.3s ease;
+ /* padding: 5px; /*PROLLYREMOVE IT*/
+
+}
+
+.about-img img:hover {
+  transform: scale(1.1);
+}
+
+.about-text {
+  flex: 1;
+  color: var(--text-main);
+  font-size: 1.1em;
+}
+
+
+/* Skills Section */
+
+
+
+/* Projects Section */
+
+
+
+/* Footer */
+
+
+
+/* Back to Top Button */
+
+

@@ -1,14 +1,8 @@
-
-/* GDG / Google Color Variables */
-/*
-  On this part, we define color variables based on Google's branding colors.
-
-  These color variables can then be reused throughout the entire CSS file without having to type the color code everytime we want to use them. 
-
-  Another benefit of using variables is that if we want to change a color, we only need to change it in one place (here) and it will be reflected everywhere the variable is used.
-*/
 :root {
   --google-dark-pink: #cc3e87;
+  --google-light-pink: #f4428f;
+  --google-dark-red: #bb3e3e;
+  --google-dark-brown: #b36d38;
   --google-red: #ea4335;
   --google-yellow: #fbbc04;
   --google-green: #34a853;
@@ -23,12 +17,6 @@
   --border-color: #5f6368;
 }
 
-/* Reset and Base Styles */
-/*
-  Here we reset some default browser styles and set base styles for the body and headings.
-
-  Basically, we want every single element on our page to start with no margin or padding, and we want to use the border-box model for box sizing.
-*/
 * {
   /*border: 1px red solid; */
   margin: 0;
@@ -36,32 +24,12 @@
   box-sizing: border-box;
 }
 
-/*
-  On this part, we set the base styles for the body and headings.
-
-  We set the font family to "Roboto", which is a popular Google font, and we set the line height for better readability.
-
-  We also set the text color and background color using the variables we defined earlier.
-
-  Finally, we set the overflow-x property to "hidden", which is used to hide the horizontal scroll bar. 
-*/
 body {
   font-family: "Pixelify Sans", pixelify -serif;
   line-height: 1.6;
   color: var(--text-main);
   background-color: var(--bg-body);
 }
-
-/* 
-  TODO: Live Coding Session Styles
-  
-  We will add styles for:
-  - Header
-  - Container
-  - Sections (About, Skills, Projects, Contact)
-  - Footer
-*/
-
 
 /* Header Section */
 header {
@@ -109,16 +77,16 @@ header p {
   padding: 10px 24px;
   border: 1px solid var(--border-color);
   border-radius: 50px;
-  color: white;
+  color: var(--text-main);
   text-decoration: none;
 }
 
 .social-links a:hover {
   background-color: #ff4aae13;
-  color: #cc3e87;
-  border-color: #f4428f;
-
+  color:var(--google-dark-pink);
+  border-color: var(--google-light-pink);
 }
+
 /* Main Content & Section Styling */
 
 .container {
@@ -156,6 +124,7 @@ section h2::after {
 section:hover {
   border-color: var(--bg-card-hover);
 }
+
 /* About Section */
 
 .about-content {
@@ -170,7 +139,7 @@ section:hover {
   height: 180px;
   overflow: hidden;
   border-radius: 50%;
-  border: 2px solid #cc3e87;
+  border: 2px solid var(--google-dark-pink);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
@@ -178,7 +147,7 @@ section:hover {
   height: auto;
   width: 100%;
   object-fit: contain;
-  transition: trasform 0.3s ease;
+  transition: transform 0.3s ease;
  /* padding: 5px; /*PROLLYREMOVE IT*/
 
 }
@@ -196,8 +165,55 @@ section:hover {
 
 /* Skills Section */
 
+.skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skill-icon-text {
+  display: flex;
+  gap: 10px;
+}
+
+.skill-icon-text img {
+  width: 24px;
+  height: 24px;
+  transform: translateY(3px);
+}
 
 
+.skill-card {
+  background-color: var(--bg-card-hover);
+  min-width: 200px;
+  flex: 1 1 20%;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  border-top: 4px solid var(--google-dark-pink);
+}
+
+.skill-card:hover {
+  background-color: #45474a; 
+  transform: translateY(-5px);
+}
+
+.skill-card h3 {
+  margin-bottom: 15px;
+}
+
+.skill-card p {
+  color: var(--text-muted);
+}
+
+.skill-card:nth-child(1) {
+  border-top-color: var(--google-dark-brown);
+}
+
+.skill-card:nth-child(3) {
+  border-top-color: var(--google-dark-red);
+}
 /* Projects Section */
 
 

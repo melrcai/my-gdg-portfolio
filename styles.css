@@ -328,6 +328,13 @@ section h2.favorites-subheading {
   transform: scale(1.05);
   opacity: 0.9;
 }
+
+
+/* Drawing Gallery */
+
+#hobbies-container p:nth-of-type(2) {
+  text-align: center;
+}
 /* Footer */
 
 footer {

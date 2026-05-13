@@ -18,7 +18,7 @@
 }
 
 * {
-  /* border: 1px red solid; */
+  /*border: 1px red solid; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,21 +49,21 @@ body {
   color: gray;
   }
 
-  .corner-img {
-    position: absolute;
-    height: auto;
+.corner-img {
+  position: absolute;
+  height: auto;
   width: 12vw;
   max-width: 20vw;
 }
 
 .corner-img.left {
   width: 6vw;
-  top: 125px;
+  top: 130px;
   left: 120px;
 }
 
 .corner-img.right {
-  top: 50px;
+  top: 12px;
   right: 100px;
 }
 
@@ -145,9 +145,9 @@ section:hover {
 }
 
 .about-img img {
-  height: auto;
+  height: 180px;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 0.3s ease;
  /* padding: 5px; /*PROLLYREMOVE IT*/
 
@@ -220,7 +220,7 @@ section:hover {
 
 .projects-content {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
@@ -231,6 +231,10 @@ section:hover {
   transition: transform 0.3s ease, background-color 0.3s ease;
 
   border-bottom: 4px solid var(--google-dark-pink);
+}
+
+.project-card img {
+  transform: translateY(7px);
 }
 
 .project-card:hover {
@@ -296,6 +300,7 @@ section h2.favorites-subheading {
   width: 250px;
   height: 350px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 12px;
   margin: 0 10px 30px; /* top || left & right || bottom */
 
@@ -313,12 +318,14 @@ section h2.favorites-subheading {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: -30px;
 }
 
 .favorite-anime-card img {
   width: 200px;
   height: 280px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 12px;
   margin: 0 7px 30px; /* top || left & right || bottom */
   transition: transform 0.3s ease;
@@ -329,12 +336,41 @@ section h2.favorites-subheading {
   opacity: 0.9;
 }
 
+/* Hobbies */
 
-/* Drawing Gallery */
+
+.drawing-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap : 20px;
+  margin-top: 20px;
+}
+
+.drawing-gallery img{
+  width : 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-inline: 10px;
+
+  transition: transform 0.3s ease;
+}
+
+.drawing-gallery img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
 
 #hobbies-container p:nth-of-type(2) {
   text-align: center;
+  font-size: 1.8em;
 }
+
+#hobbies-container p {
+  font-size: 1.5em;
+}
+
 /* Footer */
 
 footer {
@@ -348,4 +384,26 @@ footer {
 
 /* Back to Top Button */
 
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--google-dark-pink);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  box-shadow: 0 4px 12px var(--google-light-pink);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
 
+.back-to-top:hover {
+  background-color: var(--google-dark-red);
+  box-shadow: 0 6px 16px rgba(234, 71, 53, 0.4);
+}
